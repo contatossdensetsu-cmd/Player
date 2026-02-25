@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -31,6 +36,9 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew :app:assembleDebug :app:bundleRelease
+
+      - name: List build outputs
+        run: find builds/android/app/build/outputs -type f
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
