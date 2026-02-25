@@ -4,10 +4,10 @@ android {
     ndkVersion '21.4.7075529'
     assetPacks = [":assets"]
     defaultConfig {
-        applicationId "org.easyrpg.player"
-        compileSdk 36
+        applicationId "com.ssdensetsu.game"
+        compileSdk 34
         minSdkVersion 21
-        targetSdkVersion 36
+        targetSdkVersion 34
         versionName VERSION_NAME
         versionCode Integer.parseInt(VERSION_CODE)
     }

@@ -31,6 +31,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <!-- Allow access to the vibrator -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -42,7 +43,17 @@
 
         <!-- Setting SDL hints from AndroidManifest.xml: -->
         <meta-data android:name="SDL_ENV.SDL_ACCELEROMETER_AS_JOYSTICK" android:value="0" />
-        <meta-data android:name="SDL_ENV.SDL_APP_NAME" android:value="EasyRPG Player" />
+        <meta-data android:name="SDL_ENV.SDL_APP_NAME" android:value="Saint Seiya Densetsu" />
+
+        <activity
+            android:name=".LauncherActivity"
+            android:theme="@style/AppTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- Startup Activity -->
         <activity
@@ -53,11 +64,6 @@
             android:exported="true"
             android:preferMinimalPostProcessing="true"
             tools:targetApi="r">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <!-- Let Android know that we can handle some USB devices and should receive this event -->
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />

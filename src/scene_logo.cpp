@@ -116,7 +116,8 @@ void Scene_Logo::vUpdate() {
 			}
 		}
 		else {
-			Scene::Push(std::make_shared<Scene_GameBrowser>(), true);
+			Output::Error("Game not found. Exiting.");
+			Player::exit_flag = true;
 		}
 	}
 }
